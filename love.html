@@ -2,47 +2,81 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Para ti ❤️</title>
+    <title>Para ti mi amor ❤️</title>
+
     <style>
         body {
             margin: 0;
-            background: black;
+            background: #111;
             color: white;
+            font-family: "Arial", sans-serif;
             text-align: center;
-            font-family: Arial;
         }
 
-        .contenedor {
-            padding-top: 20px;
+        h1 {
+            margin-top: 20px;
+            font-size: 2.2rem;
         }
 
-        img {
-            width: 300px;
-            height: auto;
-            border-radius: 20px;
-            margin: 15px;
+        .foto-box {
+            display: inline-block;
+            background: #222;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 15px;
+            width: 260px;
+            box-shadow: 0 0 25px rgba(255, 0, 100, 0.5);
+            animation: aparecer 1s ease;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .foto-box img {
+            width: 230px;
+            border-radius: 12px;
+            border: 3px solid white;
+        }
+
+        .mensaje {
+            margin-top: 12px;
+            font-size: 1rem;
+            color: #ff97d9;
         }
 
         audio {
-            margin-top: 20px;
+            margin-top: 25px;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="contenedor">
-        <h1>❤️ Para ti mi amor ❤️</h1>
+    <h1>❤️ Para ti, mi amor ❤️</h1>
 
-        <!-- Aquí van tus 3 fotos -->
+    <!-- FOTO 1 -->
+    <div class="foto-box">
         <img src="1.jpeg" alt="foto1">
-        <img src="2.jpeg" alt="foto2">
-        <img src="3.jpeg" alt="foto3">
-
-        <!-- Música -->
-        <audio controls autoplay>
-            <source src="musica.mp3" type="audio/mpeg">
-        </audio>
+        <p class="mensaje">Contigo mis días son más bonitos. ❤️</p>
     </div>
+
+    <!-- FOTO 2 -->
+    <div class="foto-box">
+        <img src="2.jpeg" alt="foto2">
+        <p class="mensaje">Gracias por estos dos años llenos de amor. 💕</p>
+    </div>
+
+    <!-- FOTO 3 -->
+    <div class="foto-box">
+        <img src="3.jpeg" alt="foto3">
+        <p class="mensaje">Eres mi razón favorita para sonreír. ✨</p>
+    </div>
+
+    <audio controls autoplay muted onplay="this.muted=false">
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
 
 </body>
 </html>
