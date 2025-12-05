@@ -1,96 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Nuestro Amor</title>
-<style>
-body{
-margin:0;
-padding:0;
-background:#ffd9ec;
-overflow:hidden;
-font-family:"Poppins",sans-serif;
-}
+    <meta charset="UTF-8">
+    <title>Para ti ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
 
+        .contenedor {
+            padding-top: 20px;
+        }
 
-/* Corazones flotando */
-.heart{
-position:absolute;
-color:#ff5c8a;
-font-size:25px;
-animation: float 6s linear infinite;
-}
-@keyframes float{
-0%{ transform:translateY(0) scale(1); opacity:1; }
-100%{ transform:translateY(-800px) scale(1.5); opacity:0; }
-}
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 20px;
+            margin: 15px;
+        }
 
-
-.container{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:90%;
-max-width:600px;
-text-align:center;
-}
-
-
-.card{
-background:white;
-padding:20px;
-margin:20px 0;
-border-radius:20px;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
-font-size:1.2rem;
-}
-
-
-.card img{
-width:100%;
-border-radius:12px;
-margin-bottom:10px;
-}
-</style>
+        audio {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
+    <div class="contenedor">
+        <h1>❤️ Para ti mi amor ❤️</h1>
 
-<div class="container">
-<div class="card">
-<img src="img/foto1.jpeg">
-<p>Desde que llegaste, todo se sintió más bonito.</p>
-</div>
-<div class="card">
-<img src="img/foto2.jpeg">
-<p>Gracias por dos años de amor, risas y momentos inolvidables.</p>
-</div>
+        <!-- Aquí van tus 3 fotos -->
+        <img src="1.jpeg" alt="foto1">
+        <img src="2.jpeg" alt="foto2">
+        <img src="3.jpeg" alt="foto3">
 
-
-<div class="card">
-<img src="img/foto3.jpeg">
-<p>Lo nuestro es especial... y recién empieza 💖</p>
-</div>
-</div>
-
-
-<script>
-function createHeart(){
-const heart = document.createElement("div");
-heart.classList.add("heart");
-heart.innerHTML = "❤";
-heart.style.left = Math.random()*100 + "%";
-heart.style.bottom = "-20px";
-heart.style.fontSize = (20 + Math.random()*20) + "px";
-document.body.appendChild(heart);
-
-
-setTimeout(()=>heart.remove(),6000);
-}
-setInterval(createHeart, 300);
-</script>
-
+        <!-- Música -->
+        <audio controls autoplay>
+            <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
 </body>
 </html>
