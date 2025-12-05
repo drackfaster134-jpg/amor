@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Aniversario</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #ffeef4;
+            color: #333;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        header {
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #d14b77;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .timeline {
+            margin: 40px auto;
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        .event {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .event.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #d14b77;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .reveal-btn:hover {
+            background: #b53f66;
+        }
+
+        .final {
+            display: none;
+            font-size: 2rem;
+            margin-top: 40px;
+            color: #d14b77;
+            animation: pop 1s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.6); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>💖 Nuestra Historia 💖</h1>
+    <p>Dos años juntos... y cada momento ha sido especial.</p>
+</header>
+
+<!-- Música de fondo -->
+<audio id="music" src="music/musica.mp3" autoplay loop></audio>
+
+<div class="timeline">
+    <div class="event"><img src="img/foto1.jpg" style="width:100%;border-radius:12px;margin-bottom:10px;">Nos conocimos, y sin darnos cuenta, algo hermoso empezó a crecer.</div>
+    <div class="event"><img src="img/foto2.jpg" style="width:100%;border-radius:12px;margin-bottom:10px;">Risas, mensajes largos, y momentos que fueron haciendo todo más bonito.</div>
+    <div class="event"><img src="img/foto3.jpg" style="width:100%;border-radius:12px;margin-bottom:10px;">Aprendimos, crecimos y seguimos caminando juntitos.</div>
+    <div class="event"><img src="img/foto4.jpg" style="width:100%;border-radius:12px;margin-bottom:10px;">Hoy celebramos dos años... y lo que falta por vivir ❤️</div>
+</div>
+    <div class="event">Risas, mensajes largos, y momentos que fueron haciendo todo más bonito.</div>
+    <div class="event">Aprendimos, crecimos y seguimos caminando juntitos.</div>
+    <div class="event">Hoy celebramos dos años... y lo que falta por vivir ❤️</div>
+</div>
+
+<button class="reveal-btn" onclick="revealStory()">Ver mensaje final</button>
+
+<div id="finalMsg" class="final">Feliz Aniversario, mi amor ❤️</div>
+
+<script>
+    // Efecto al hacer scroll
+    const events = document.querySelectorAll('.event');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+    }, { threshold: 0.2 });
+
+    events.forEach(ev => observer.observe(ev));
+
+    function revealStory() {
+        document.getElementById("finalMsg").style.display = "block";
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+</script>
+
+</body>
+</html>
