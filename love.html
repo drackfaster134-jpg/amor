@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuestro Amor</title>
+<style>
+body{
+margin:0;
+padding:0;
+background:#ffd9ec;
+overflow:hidden;
+font-family:"Poppins",sans-serif;
+}
+
+
+/* Corazones flotando */
+.heart{
+position:absolute;
+color:#ff5c8a;
+font-size:25px;
+animation: float 6s linear infinite;
+}
+@keyframes float{
+0%{ transform:translateY(0) scale(1); opacity:1; }
+100%{ transform:translateY(-800px) scale(1.5); opacity:0; }
+}
+
+
+.container{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:600px;
+text-align:center;
+}
+
+
+.card{
+background:white;
+padding:20px;
+margin:20px 0;
+border-radius:20px;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+font-size:1.2rem;
+}
+
+
+.card img{
+width:100%;
+border-radius:12px;
+margin-bottom:10px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+<div class="card">
+<img src="img/foto1.jpg">
+<p>Desde que llegaste, todo se sintió más bonito.</p>
+</div>
+<div class="card">
+<img src="img/foto2.jpg">
+<p>Gracias por dos años de amor, risas y momentos inolvidables.</p>
+</div>
+
+
+<div class="card">
+<img src="img/foto3.jpg">
+<p>Lo nuestro es especial... y recién empieza 💖</p>
+</div>
+</div>
+
+
+<script>
+function createHeart(){
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML = "❤";
+heart.style.left = Math.random()*100 + "%";
+heart.style.bottom = "-20px";
+heart.style.fontSize = (20 + Math.random()*20) + "px";
+document.body.appendChild(heart);
+
+
+setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart, 300);
+</script>
+
+
+</body>
+</html>
